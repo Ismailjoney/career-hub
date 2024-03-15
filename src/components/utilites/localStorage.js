@@ -14,7 +14,31 @@ const saveJobApplication = id =>{
     if(!exists){
         storedJobApplications.push(id);
         localStorage.setItem('job-applications', JSON.stringify(storedJobApplications))
-    } 
+
+
+        toast.success('You have applied successfully', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+        });
+
+    } else{
+        toast.warn('You allredy apply', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+        });
+    }
 }
 
 export { getStoredJobApplication, saveJobApplication}
